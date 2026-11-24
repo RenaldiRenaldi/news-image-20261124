@@ -4,8 +4,8 @@ im=Image.new('RGB',(W,H),BG); d=ImageDraw.Draw(im); fp='/usr/share/fonts/truetyp
 def F(n,b=0): return ImageFont.truetype(fb if b else fp,n)
 def T(x,y,s,n=12,c=INK,b=0): d.text((x,y),s,font=F(n,b),fill=c)
 def B(a,fill=PANEL,ol=(48,77,91)): d.rounded_rectangle(a,7,fill=fill,outline=ol,width=2)
-T(32,22,'THE TUESDAY ATLAS',35,GOLD,1); T(35,63,'24 NOVEMBER 2026  /  FIELD NOTES, PLACES, AND WHAT COMES NEXT',13,MUTED,1); d.line((32,94,992,94),fill=GOLD,width=3)
-T(35,108,'CIKANDE: 24 KILLED',30,INK,1); T(37,146,'SEARCH CONTINUES IN THE CANDY FACTORY RUINS',18,RED,1); T(38,178,'MON 23 NOV  •  ~30 STILL MISSING  •  AC SHORT-CIRCUIT SUSPECTED  •  DNA ID 2–3 WEEKS',12,MUTED)
+T(32,22,'THE TUESDAY ATLAS',35,GOLD,1); T(35,63,'24 NOVEMBER 2026  /  CIKANDE: 24 KILLED — HUANG RETURNS TO NVIDIA',13,MUTED,1); d.line((32,94,992,94),fill=GOLD,width=3)
+T(35,108,'CIKANDE:',34,INK,1); T(35+d.textlength('CIKANDE:',font=F(34,1))+7,108,'24',34,GOLD,1); T(35+d.textlength('CIKANDE: 24',font=F(34,1))+14,108,'KILLED',34,INK,1); T(37,146,'SEARCH CONTINUES IN THE CANDY FACTORY RUINS',18,RED,1); T(38,178,'MON 23 NOV  •  ~30 STILL MISSING  •  AC SHORT-CIRCUIT SUSPECTED  •  DNA ID 2–3 WEEKS',12,MUTED)
 B((34,208,420,458),(25,43,55),(105,139,147)); T(52,224,'FIELD SKETCH / SERANG, INDONESIA',11,GOLD,1); d.rectangle((55,268,398,408),fill=(41,52,58),outline=(115,142,143),width=2)
 # A compact field illustration: damaged factory, searchlight, rubble and properly proportioned crews.
 d.rectangle((56,269,397,407),fill=(28,39,48)); d.rectangle((61,337,392,407),fill=(35,43,47))
@@ -56,7 +56,32 @@ T(55,650,'Cluster rule: New York is one dot for BTC, stocks, GTA VI, n0n, Pannun
 B((34,692,990,798),(23,46,53),(64,133,132)); T(52,706,'BESOK  /  WEDNESDAY 25 NOVEMBER 2026',13,CYAN,1)
 events=['UNSC open debate — New York','UEFA Champions League Matchday 5 — Europe','Falcon 9 USSF-266 — Vandenberg, 15:55 UTC','Progress MS-36 — Baikonur, 05:03 UTC','FIFA U-17 Matchday 2 groups I–L — Doha','Consumer Confidence November — New York, 10:00 ET','White House Turkey Pardon — Washington DC, 14:00 ET']
 for i,e in enumerate(events): x=54+(i%2)*460; y=735+(i//2)*15; d.ellipse((x,y+4,x+6,y+10),fill=GOLD); T(x+14,y,e,10)
-cards=[('COP31','NO DEAL',RED),('NATO','3× KH-101',BLUE),('NEPAL','RAIL + $2bn',GOLD),('INDIA–NZ','DRAW',GREEN),('BTC','~$61.5k FLAT',CYAN),('GAZA','CONTAMINATION',RED),('WAYMO','FREEWAYS HALT',BLUE),('SENEGAL','BOAT CAPSIZES',GOLD),('DENMARK','GHETTO LAW',GREEN),('FIFA','2031 / 2035 HOSTS',CYAN),('ALCARAZ','ATP FINALS',GOLD),('MERKURY','UKRAINE CLAIMS SUNK',RED)]
+cards=[('COP31','NO DEAL',RED),('NATO','3× KH-101',BLUE),('NEPAL','RAIL + $2bn',GOLD),('INDIA–NZ','DRAW',GREEN),('BTC','~$61.5k FLAT',CYAN),('GAZA','CONTAMINATION',RED),('DYMER','9 DEAD',BLUE),('TRILATERAL','TRUMP–XI–PUTIN',GOLD),('U17 WORLD CUP','MATCHDAY 2',GREEN),('BAHRAIN','ESCALATION',CYAN),('VANUATU','M6.5 DEEP',GOLD),('MERKURY','UKRAINE CLAIMS SUNK',RED)]
+def icon(x,y,c,i):
+ if i==0:
+  d.ellipse((x+1,y+1,x+17,y+17),outline=c,width=2); d.line((x+9,y+2,x+9,y+16),fill=c,width=1); d.arc((x+3,y+4,x+15,y+14),0,180,fill=c,width=1)
+ elif i==1:
+  d.polygon([(x+9,y+1),(x+16,y+4),(x+15,y+12),(x+9,y+17),(x+3,y+12),(x+2,y+4)],outline=c); d.line((x+5,y+8,x+8,y+11),fill=c,width=2); d.line((x+8,y+11,x+13,y+6),fill=c,width=2)
+ elif i==2:
+  d.polygon([(x+1,y+16),(x+7,y+6),(x+11,y+12),(x+15,y+4),(x+18,y+16)],outline=c); d.line((x+2,y+17,x+17,y+17),fill=c,width=2)
+ elif i==3:
+  d.line((x+5,y+3,x+13,y+15),fill=c,width=3); d.line((x+3,y+3,x+7,y+1),fill=c,width=2); d.ellipse((x+13,y+3,x+17,y+7),outline=c,width=1)
+ elif i==4:
+  d.ellipse((x+2,y+1,x+16,y+17),outline=c,width=2); T(x+5,y+1,'B',12,c,1)
+ elif i==5:
+  d.polygon([(x+9,y+1),(x+17,y+17),(x+1,y+17)],outline=c); d.line((x+9,y+6,x+9,y+12),fill=c,width=2); d.point((x+9,y+15),fill=c)
+ elif i==6:
+  d.rectangle((x+2,y+8,x+16,y+14),outline=c,width=2); d.polygon([(x+5,y+8),(x+8,y+4),(x+13,y+4),(x+16,y+8)],outline=c); d.ellipse((x+4,y+12,x+7,y+16),fill=c); d.ellipse((x+12,y+12,x+15,y+16),fill=c)
+ elif i==7:
+  d.polygon([(x+1,y+10),(x+17,y+10),(x+13,y+16),(x+5,y+16)],outline=c); d.line((x+9,y+2,x+9,y+10),fill=c,width=2); d.polygon([(x+10,y+3),(x+16,y+8),(x+10,y+8)],outline=c)
+ elif i==8:
+  d.rectangle((x+3,y+5,x+15,y+17),outline=c,width=2); d.polygon([(x+2,y+5),(x+9,y+1),(x+16,y+5)],outline=c); d.rectangle((x+6,y+9,x+8,y+12),outline=c); d.rectangle((x+11,y+9,x+13,y+12),outline=c)
+ elif i==9:
+  d.polygon([(x+10,y+1),(x+3,y+10),(x+9,y+10),(x+6,y+17),(x+16,y+7),(x+10,y+7)],outline=c)
+ elif i==10:
+  d.line((x+1,y+11,x+5,y+7,x+9,y+13,x+13,y+5,x+17,y+10),fill=c,width=2); d.line((x+2,y+16,x+16,y+16),fill=c,width=1)
+ else:
+  d.polygon([(x+1,y+11),(x+17,y+11),(x+13,y+16),(x+5,y+16)],outline=c); d.line((x+9,y+2,x+9,y+11),fill=c,width=2); d.line((x+9,y+3,x+15,y+6),fill=c,width=1)
 for i,(a,b,c) in enumerate(cards):
- x=34+(i%4)*240; y=810+(i//4)*60; B((x,y,x+228,y+52),(18,34,47)); T(x+8,y+6,a,10,c,1); T(x+8,y+22,b,9,INK,1); d.ellipse((x+190,y+17,x+208,y+35),outline=c,width=2); d.line((x+199,y+35,x+199,y+46),fill=c,width=2)
+ x=34+(i%4)*240; y=810+(i//4)*54; B((x,y,x+228,y+52),(18,34,47)); T(x+8,y+6,a,10,c,1); T(x+8,y+22,b,9,INK,1); icon(x+190,y+17,c,i)
 d.line((34,974,990,974),fill=GOLD,width=2); T(38,983,'DATE CHECK  •  TUESDAY 24 NOVEMBER 2026  •  36 DISTINCT THREADS  •  SOURCES LEDGER INCLUDED',10,INK,1); im.save('entry.png',optimize=True)

@@ -11,11 +11,11 @@ All facts were selected from the competition preresearch and its 06:20 WIB re-re
 7. Bitcoin about $61,500 flat, Binance/Finnhub snapshot, 23 Nov.
 8. Ukraine claims Merkury sunk off Benghazi, re-research sources, 23 Nov.
 9. Gaza contamination report, Oxfam + CEOBS, 24 Nov.
-10. Waymo freeway pause, re-research sources, 24 Nov.
-11. Senegal migrant boat capsized, re-research sources, 24 Nov.
-12. Denmark Supreme Court ghetto law, re-research sources, 24 Nov.
-13. FIFA Women's World Cup hosts, re-research sources, 24 Nov.
-14. Carlos Alcaraz ATP Finals, re-research sources, 23 Nov.
+10. Dymer apartment strike, 9 dead, BBC News via NewsBites + RFE/RL, 23 Nov.
+11. Trump–Xi–Putin Shenzhen trilateral, RFE/RL + SimpleLife News, 23 Nov.
+12. FIFA U-17 World Cup Matchday 2, FIFA + Sportradar + AAP News, 23 Nov.
+13. Iran–Bahrain escalation, ni23 ledger + Candymountains + RFE/RL, 23 Nov.
+14. Vanuatu M6.5 deep earthquake, USGS + PAGER, 23 Nov.
 15. Dymer strike aftermath, BBC/Reuters, 23 Nov.
 16. Trump–Xi–Putin Shenzhen declaration, verified preresearch, 23 Nov.
 17. Vanuatu M6.5 deep earthquake, USGS/PAGER, 23 Nov.
