@@ -12,8 +12,11 @@ d.polygon([(55,305),(100,255),(150,280),(210,245),(260,277),(330,245),(398,282),
 for x,y in [(112,370),(185,355),(260,375)]:
  d.ellipse((x-10,y-34,x+10,y-14),fill=(222,177,132),outline=(15,20,24)); d.arc((x-12,y-40,x+12,y-17),180,360,fill=GOLD,width=4); d.rectangle((x-14,y-14,x+14,y+30),fill=(197,142,43),outline=INK,width=1); d.line((x-12,y+4,x-30,y+20),fill=INK,width=3); d.line((x+12,y+4,x+30,y+20),fill=INK,width=3)
 d.ellipse((310,355,350,395),outline=CYAN,width=4); d.line((345,390,380,418),fill=CYAN,width=5); T(54,420,'24 body bags recovered; toll confirmed Monday',11,INK,1); T(54,438,'29 safe  •  5 hospitalised  •  unstable structure',10,MUTED)
-B((438,208,990,458),(25,39,52),(82,117,134)); T(457,224,'CO-LEAD / MON 23 NOV',11,GOLD,1); T(457,246,'HUANG RETURNS TO NVIDIA',24,INK,1); T(458,281,'Resigned 12 Nov → reinstated by unanimous board vote',13,CYAN,1); T(458,302,'almost $1 trillion added to Nvidia value; tech stocks rally',13,INK)
-d.ellipse((805,260,865,320),fill=(190,140,103),outline=INK,width=2); d.pieslice((800,248,870,290),180,360,fill=(26,30,36),outline=(10,15,20)); d.rectangle((817,319,853,379),fill=(30,69,103)); d.rectangle((740,359,910,405),outline=CYAN,width=3); T(760,370,'NVIDIA',18,CYAN,1); T(458,335,'No senior executive was told beforehand.',11,MUTED); T(458,358,'Developing story; numbers use “almost” and “nearly”.',11,MUTED)
+B((438,208,990,458),(25,39,52),(82,117,134)); T(457,224,'CO-LEAD / MON 23 NOV',11,GOLD,1); T(457,246,'HUANG RETURNS TO NVIDIA',24,INK,1); T(458,281,'Resigned 12 Nov, reinstated by unanimous board',13,CYAN,1); T(458,302,'almost 1 trillion added to Nvidia value; tech stocks rally',13,INK)
+# Small upward market mark in the spare right edge; the text column remains unobstructed.
+d.polygon([(935,285),(949,267),(958,277),(973,248),(973,305),(935,305)],fill=(42,100,151),outline=CYAN)
+d.line((940,296,968,296),fill=INK,width=2); d.line((946,291,953,284),fill=INK,width=2); d.line((953,284,959,289),fill=INK,width=2); d.line((959,289,970,271),fill=INK,width=2)
+d.rectangle((740,359,910,405),outline=CYAN,width=3); T(760,370,'NVIDIA',18,CYAN,1); T(458,335,'No senior executive was told beforehand.',11,MUTED); T(458,358,'Developing story; numbers use almost and nearly.',11,MUTED)
 B((34,475,990,676),(13,38,52),(67,111,122)); T(52,490,'WHERE THE DAY LANDED  /  REAL-LOCATION DOTS',12,CYAN,1); mx,my,mw,mh=52,518,920,137; d.rectangle((mx,my,mx+mw,my+mh),fill=(10,48,63),outline=(52,102,113))
 for i in range(1,10): d.line((mx+i*mw/10,my,mx+i*mw/10,my+mh),fill=(27,72,81))
 for i in range(1,5): d.line((mx,my+i*mh/5,mx+mw,my+i*mh/5),fill=(27,72,81))
