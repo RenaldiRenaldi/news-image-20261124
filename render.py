@@ -7,11 +7,12 @@ RED = (220, 38, 38); BLUE = (30, 64, 175); GREEN = (107, 114, 128); ORANGE = (18
 im = Image.new('RGB', (W, H), BG); d = ImageDraw.Draw(im)
 # Deterministic paper grain keeps the large white field tactile while remaining
 # below normal viewing contrast. It also survives downsampling as a clean tint.
-for yy in range(0, H, 2):
-    for xx in range((yy // 2) % 2, W, 2):
-        grain = ((xx * 1103515245 + yy * 12345 + 67891) >> 8) % 17
-        if grain < 9:
-            shade = 249 + (grain % 4)
+grain_state = 1234567
+for yy in range(H):
+    for xx in range(W):
+        grain_state = (1664525 * grain_state + 1013904223) & 0xffffffff
+        if im.getpixel((xx, yy)) == BG and grain_state % 10 < 2:
+            shade = 249 + ((grain_state >> 8) % 4)
             im.putpixel((xx, yy), (shade, shade + 1, shade + 2))
 d = ImageDraw.Draw(im)
 FP = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'; FB = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
