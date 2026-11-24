@@ -14,7 +14,7 @@ def line(points, fill, width=2): d.line(points, fill=fill, width=width)
 text(32,18,'THE TUESDAY ATLAS',34,GOLD,True); text(34,59,'24 NOVEMBER 2026  /  HUANG RETURNS TO NVIDIA — CIKANDE: 24 KILLED',13,MUTED,True); text(990,23,'V2',17,CYAN,True,'ra'); line((32,91,992,91),GOLD,3)
 text(34,99,'HUANG RETURNS, NVIDIA ADDS $1 TRILLION, CIKANDE 24 KILLED',14,INK,True); text(990,99,'39 STORIES  •  9 REGIONS',12,CYAN,True,'ra')
 
-box(32,126,632,414,(15,38,55),(64,139,163),10,2); text(51,141,'LEAD / NEW YORK — MON 23 NOV',11,GOLD,True); text(51,162,'HUANG RETURNS TO NVIDIA',29,INK,True); text(51,199,'THE BOARD REINSTATED HIM UNANIMOUSLY',12,CYAN,True); text(51,223,'+31% IN ONE SESSION',20,GOLD,True); text(51,251,'≈$1.1T ADDED TO NVIDIA VALUE',18,INK,True); text(51,280,'Q3 REVENUE  $115.8B  /  +103% YoY',12,MUTED); text(51,300,'NASDAQ +6.5%  •  S&P 500 +4.7%',12,MUTED); text(51,320,'AMD +6.85%  •  TSMC +14.08%  •  GOLD +3.2%',10,MUTED)
+box(32,126,632,414,(15,38,55),(64,139,163),10,2); text(51,141,'LEAD / NEW YORK — MON 23 NOV',11,GOLD,True); text(51,162,'HUANG RETURNS TO NVIDIA',25,INK,True); text(51,199,'THE BOARD REINSTATED HIM UNANIMOUSLY',12,CYAN,True); text(51,223,'+31% IN ONE SESSION',20,GOLD,True); text(51,251,'≈$1.1T ADDED TO NVIDIA VALUE',18,INK,True); text(51,280,'Q3 REVENUE  $115.8B  /  +103% YoY',12,MUTED); text(51,300,'NASDAQ +6.5%  •  S&P 500 +4.7%',12,MUTED); text(51,320,'AMD +6.85%  •  TSMC +14.08%  •  GOLD +3.2%',10,MUTED)
 gx,gy,gw,gh=51,350,550,46
 for i in range(1,6): line((gx,gy+i*gh/5,gx+gw,gy+i*gh/5),(35,73,88),1)
 for i in range(1,10): line((gx+i*gw/10,gy,gx+i*gw/10,gy+gh),(28,62,78),1)
