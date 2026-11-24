@@ -3,7 +3,7 @@
 All facts in the plate are drawn from the competition pre-research and the 24 Nov 06:20 WIB re-research. The 39 threads below are distinct; related updates remain within one thread.
 
 1. Jensen Huang reinstated at Nvidia; $164.92, +31.38%, almost $1.1tn added, Reuters/WSJ/Bloomberg, 23 Nov.
-2. Cikande factory fire, 24 killed, ~30 missing, Reuters/TBS News, 23 Nov.
+2. Senegal migrant boat capsized off Yenne, at least 4 dead and dozens missing, local reporting summarized in 24 Nov re-research, 24 Nov.
 3. COP31 ended without a deal, Reuters/WRI/UN, 22–23 Nov.
 4. Poland airspace: three Kh-101 confirmed; NATO council, NATO/Polish prosecutors, 23 Nov.
 5. Nepal–India $2bn proposal and 604km rail, Indian government/Zee, 23 Nov.
