@@ -1,40 +1,45 @@
 # Sources ledger
 
-All facts were selected from the competition preresearch and its 06:20 WIB re-research. This ledger was reviewed after rendering; threads are distinct and follow-ups remain within their original thread.
+All facts in the plate are drawn from the competition pre-research and the 24 Nov 06:20 WIB re-research. The 39 threads below are distinct; related updates remain within one thread.
 
-1. Cikande factory fire, 24 killed, ~30 missing, Reuters/TBS News, 23 Nov.
-2. Jensen Huang reinstated at Nvidia, NYT/Bloomberg/WSJ, 23 Nov.
-3. COP31 no deal, Reuters/SRN News, 22–23 Nov.
-4. NATO Council, three Kh-101, no Article 4, EuropeSays, 23 Nov.
-5. Nepal–Modi package and Ayodhya–Janakpur rail, Zee/Dainik Jagran, 23 Nov.
-6. India–New Zealand Test draw, cricket reporting, 23 Nov.
-7. Bitcoin about $61,500 flat, Binance/Finnhub snapshot, 23 Nov.
-8. Ukraine claims Merkury sunk off Benghazi, re-research sources, 23 Nov.
-9. Gaza contamination report, Oxfam + CEOBS, 24 Nov.
-10. Dymer apartment strike, 9 dead, BBC News via NewsBites + RFE/RL, 23 Nov.
-11. Trump–Xi–Putin Shenzhen trilateral, RFE/RL + SimpleLife News, 23 Nov.
-12. FIFA U-17 World Cup Matchday 2, FIFA + Sportradar + AAP News, 23 Nov.
-13. Iran–Bahrain escalation, ni23 ledger + Candymountains + RFE/RL, 23 Nov.
-14. Vanuatu M6.5 deep earthquake, USGS + PAGER, 23 Nov.
-15. Dymer strike aftermath, BBC/Reuters, 23 Nov.
-16. Trump–Xi–Putin Shenzhen declaration, verified preresearch, 23 Nov.
-17. Vanuatu M6.5 deep earthquake, USGS/PAGER, 23 Nov.
-18. South Korea exports pass $1tn, verified preresearch, 23 Nov.
-19. Taiwan stocks swing, verified preresearch, 23 Nov.
-20. Democrats North Carolina House flip, verified preresearch, 23 Nov.
-21. ECB Lagarde February 2027 departure, verified preresearch, 23 Nov.
-22. Riemann hypothesis proof claim, verified as claim only, 23 Nov.
-23. Mayon eruption concerns, verified preresearch, 23 Nov.
-24. French student protests planned, verified preresearch, 23 Nov.
-25. Liverpool–Manchester United result, verified preresearch, 23 Nov.
-26. Kyiv bridges strike aftermath, verified carry-over, 20 Nov.
-27. Kryvyi Rih strike, verified carry-over, 20 Nov.
-28. GTA VI launch sales, verified carry-over, 20 Nov.
-29. Daraxonrasib pancreatic cancer trial, verified carry-over, 20 Nov.
-30. Gen Z youth strike, verified carry-over, 20–23 Nov.
-31. FBI NCIC breach investigation, verified carry-over, 20 Nov.
-32. NASA Mars radio failure, verified carry-over, 19 Nov.
-33. EU–UK reset deals, verified carry-over, 20 Nov.
-34. ICJ Myanmar Rohingya genocide ruling, verified carry-over, 19 Nov.
-35. Spain election polling disagreement, verified carry-over, 20 Nov.
-36. Japan CPI and BoJ outlook, verified carry-over, 20 Nov.
+1. Jensen Huang reinstated at Nvidia; $164.92, +31.38%, almost $1.1tn added, Reuters/WSJ/Bloomberg, 23 Nov.
+2. Cikande factory fire, 24 killed, ~30 missing, Reuters/TBS News, 23 Nov.
+3. COP31 ended without a deal, Reuters/WRI/UN, 22–23 Nov.
+4. Poland airspace: three Kh-101 confirmed; NATO council, NATO/Polish prosecutors, 23 Nov.
+5. Nepal–India $2bn proposal and 604km rail, Indian government/Zee, 23 Nov.
+6. India–New Zealand Test draw, Cricinfo, 23 Nov.
+7. Bitcoin intraday spike $64,446–64,603 then ~$61k, CoinDesk/CoinGlass, 23 Nov.
+8. Dymer apartment strike, 9 dead, BBC/RFE-RL, 23 Nov.
+9. Russian frigate Merkury sunk claim near Benghazi, RFE/RL/Reuters, 23 Nov.
+10. Trump–Xi–Putin Shenzhen trilateral declaration, RFE/RL, 23 Nov.
+11. Gaza contamination report, Oxfam/CEOBS, 24 Nov.
+12. FIFA U-17 World Cup Matchday 2, FIFA/Sportradar, 23 Nov.
+13. Iran–Bahrain escalation, RFE/RL, 23 Nov.
+14. Vanuatu M6.5 deep earthquake, USGS/PAGER, 23 Nov.
+15. South Korea exports pass $1tn, Korean trade data, 23 Nov.
+16. Taiwan stocks swing and TSMC rally, market reporting, 23 Nov.
+17. North Carolina House flip, US election reporting, 23 Nov.
+18. Lagarde to leave ECB February 2027, ECB reporting, 23 Nov.
+19. Riemann hypothesis proof claim, reporting labels it unverified, 23 Nov.
+20. Mayon eruption concerns, Philippine volcanology reporting, 23 Nov.
+21. French student protests planned, French press, 23 Nov.
+22. Alcaraz wins ATP Finals, ATP, 23 Nov.
+23. Liverpool–Manchester United result, match reporting, 23 Nov.
+24. Kyiv bridges strike aftermath, Reuters/Ukraine reporting, 20 Nov.
+25. Kryvyi Rih double-tap, Reuters/Ukraine reporting, 20 Nov.
+26. GTA VI launch sales, publisher/market reporting, 20 Nov.
+27. Daraxonrasib pancreatic cancer trial, clinical reporting, 20 Nov.
+28. Gen Z youth strike in Europe, reporting, 20–23 Nov.
+29. FBI NCIC breach investigation, US reporting, 20 Nov.
+30. NASA Mars rover radio failure, NASA/JPL, 19 Nov.
+31. Ethiopia Moyale displacement, UN/EU reporting, 19–20 Nov.
+32. Congo Ebola six-month figures, health reporting, 19 Nov.
+33. Basra Hartha power-station fire, Reuters/Al Jazeera, 21 Nov.
+34. EU–UK reset agreements, UK/EU statements, 20 Nov.
+35. ICJ Myanmar Rohingya genocide ruling, ICJ, 19 Nov.
+36. Spain election polling disagreement, 40dB/SW Demoscopia, 20 Nov.
+37. Japan October CPI and BoJ outlook, Japan statistics/Reuters, 20 Nov.
+38. Anthropic Nasdaq IPO ticker ANT at $83; ~$86 on 23 Nov, Motley Fool/Sovereign Magazine.
+39. Waymo temporarily removes vehicles from US freeways, company/traffic reporting, 24 Nov.
+
+Illustrated cards: COP31, NATO, Nepal, India–NZ, BTC, Anthropic, Gaza, Dymer, Trilateral, U17, Bahrain, Vanuatu, Merkury, Waymo. Regions counted in the footer: Southeast Asia, East Asia, South Asia, Middle East, Europe, Africa, North America, Oceania, Central Asia.

@@ -1,87 +1,70 @@
-from PIL import Image,ImageDraw,ImageFont
-W=H=1024; BG=(10,20,30); INK=(239,244,238); MUTED=(163,184,188); GOLD=(246,184,66); RED=(232,96,78); CYAN=(80,201,193); BLUE=(89,157,220); GREEN=(124,196,137); PANEL=(19,35,47)
-im=Image.new('RGB',(W,H),BG); d=ImageDraw.Draw(im); fp='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'; fb='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
-def F(n,b=0): return ImageFont.truetype(fb if b else fp,n)
-def T(x,y,s,n=12,c=INK,b=0): d.text((x,y),s,font=F(n,b),fill=c)
-def B(a,fill=PANEL,ol=(48,77,91)): d.rounded_rectangle(a,7,fill=fill,outline=ol,width=2)
-T(32,22,'THE TUESDAY ATLAS',35,GOLD,1); T(35,63,'24 NOVEMBER 2026  /  CIKANDE: 24 KILLED — HUANG RETURNS TO NVIDIA',13,MUTED,1); d.line((32,94,992,94),fill=GOLD,width=3)
-T(35,108,'CIKANDE:',34,INK,1); T(35+d.textlength('CIKANDE:',font=F(34,1))+7,108,'24',34,GOLD,1); T(35+d.textlength('CIKANDE: 24',font=F(34,1))+14,108,'KILLED',34,INK,1); T(37,146,'SEARCH CONTINUES IN THE CANDY FACTORY RUINS',18,RED,1); T(38,178,'MON 23 NOV  •  ~30 STILL MISSING  •  AC SHORT-CIRCUIT SUSPECTED  •  DNA ID 2–3 WEEKS',12,MUTED)
-B((34,208,420,458),(25,43,55),(105,139,147)); T(52,224,'FIELD SKETCH / SERANG, INDONESIA',11,GOLD,1); d.rectangle((55,268,398,408),fill=(41,52,58),outline=(115,142,143),width=2)
-# A compact field illustration: damaged factory, searchlight, rubble and properly proportioned crews.
-d.rectangle((56,269,397,407),fill=(28,39,48)); d.rectangle((61,337,392,407),fill=(35,43,47))
-d.polygon([(57,312),(77,284),(98,292),(120,273),(149,290),(174,279),(202,294),(230,270),(260,290),(286,277),(315,295),(345,268),(397,296),(397,338),(57,338)],fill=(49,64,67))
-d.polygon([(57,312),(77,284),(98,292),(120,273),(149,290),(174,279),(202,294),(230,270),(260,290),(286,277),(315,295),(345,268),(397,296),(397,312),(346,294),(314,313),(276,298),(235,313),(190,298),(151,314),(112,298),(78,320)],fill=(64,78,77))
-for x in (76,112,148,184,220,256,292,328,364):
- d.rectangle((x,337,x+24,405),fill=(56,64,63),outline=(139,141,126),width=1)
-for x in (89,167,243,320):
- d.rectangle((x,314,x+38,337),fill=(30,42,47),outline=(115,125,116),width=1)
-# warm rescue beam and its bright landing point
-d.polygon([(328,314),(359,302),(394,277),(394,337),(359,329)],fill=(109,103,70))
-d.polygon([(350,302),(362,298),(394,288),(394,316),(365,317)],fill=(188,155,73))
-d.ellipse((370,294,386,310),fill=(246,197,83),outline=(255,226,145),width=1)
-# rubble in the foreground
-for p in [[(63,399),(78,378),(94,397),(111,389),(126,407)],[(274,407),(288,384),(303,398),(320,386),(345,407)],[(349,407),(359,393),(372,399),(392,388),(397,407)]]: d.polygon(p,fill=(81,80,72),outline=(126,117,93))
-# stretchers and covered body bags
-for x in (71,276):
- d.line((x,388,x+69,388),fill=(179,166,128),width=3); d.line((x+8,388,x+2,406),fill=(157,148,119),width=2); d.line((x+60,388,x+66,406),fill=(157,148,119),width=2)
- d.polygon([(x+10,375),(x+24,366),(x+57,368),(x+65,380),(x+55,389),(x+19,388)],fill=(122,136,132),outline=(201,205,180))
- d.ellipse((x+19,369,x+31,378),fill=(156,165,153))
-# two rescuers with helmets, vests, arms, legs and shadows
-for x,y,scale in [(143,367,1),(227,359,1)]:
- d.ellipse((x-15,y+25,x+16,y+34),fill=(18,27,31))
- d.ellipse((x-9,y-31,x+9,y-12),fill=(211,166,124),outline=(15,20,24))
- d.pieslice((x-12,y-38,x+12,y-15),180,360,fill=(244,183,55),outline=(255,210,91)); d.line((x-12,y-27,x+12,y-27),fill=(87,67,39),width=2)
- d.polygon([(x-13,y-12),(x+13,y-12),(x+18,y+26),(x-16,y+26)],fill=(214,137,43),outline=(239,201,112))
- d.rectangle((x-3,y-11,x+3,y+25),fill=(241,206,116)); d.line((x-12,y-5,x-30,y+16),fill=(224,211,178),width=4); d.line((x+12,y-5,x+30,y+11),fill=(224,211,178),width=4)
- d.line((x-8,y+25,x-17,y+43),fill=(47,57,61),width=5); d.line((x+8,y+25,x+17,y+43),fill=(47,57,61),width=5)
-d.ellipse((332,355,367,390),outline=CYAN,width=4); d.line((360,384,387,408),fill=CYAN,width=5); T(54,420,'24 body bags recovered; toll confirmed Monday',11,INK,1); T(54,438,'29 safe  •  5 hospitalised  •  unstable structure',10,MUTED)
-B((438,208,990,458),(25,39,52),(82,117,134)); T(457,224,'CO-LEAD / MON 23 NOV',11,GOLD,1); T(457,246,'HUANG RETURNS TO NVIDIA',24,INK,1); T(458,281,'Resigned 12 Nov, reinstated by unanimous board',13,CYAN,1); T(458,302,'almost 1 trillion added to Nvidia value; tech stocks rally',13,INK)
-# Small upward market mark in the spare right edge; the text column remains unobstructed.
-d.polygon([(935,285),(949,267),(958,277),(973,248),(973,305),(935,305)],fill=(42,100,151),outline=CYAN)
-d.line((940,296,968,296),fill=INK,width=2); d.line((946,291,953,284),fill=INK,width=2); d.line((953,284,959,289),fill=INK,width=2); d.line((959,289,970,271),fill=INK,width=2)
-d.rectangle((740,359,910,405),outline=CYAN,width=3); T(760,370,'NVIDIA',18,CYAN,1); T(458,335,'No senior executive was told beforehand.',11,MUTED); T(458,358,'Developing story; numbers use almost and nearly.',11,MUTED)
-B((34,475,990,676),(13,38,52),(67,111,122)); T(52,490,'WHERE THE DAY LANDED  /  REAL-LOCATION DOTS',12,CYAN,1); mx,my,mw,mh=52,518,920,137; d.rectangle((mx,my,mx+mw,my+mh),fill=(10,48,63),outline=(52,102,113))
-for i in range(1,10): d.line((mx+i*mw/10,my,mx+i*mw/10,my+mh),fill=(27,72,81))
-for i in range(1,5): d.line((mx,my+i*mh/5,mx+mw,my+i*mh/5),fill=(27,72,81))
-for s in [
- [(75,550),(91,540),(111,533),(133,536),(151,542),(169,548),(188,558),(180,568),(161,570),(151,580),(139,584),(128,600),(111,598),(98,592),(91,577),(84,568)],
- [(158,585),(170,578),(185,579),(197,588),(205,601),(212,614),(222,624),(215,639),(205,649),(198,640),(191,624),(182,612),(175,598)],
- [(218,536),(246,530),(273,527),(299,530),(321,535),(345,532),(368,531),(393,538),(416,537),(441,544),(464,554),(485,562),(512,570),(539,581),(563,590),(589,591),(578,603),(557,613),(538,608),(514,601),(493,603),(470,609),(449,616),(426,608),(402,603),(382,599),(361,603),(337,608),(317,600),(295,598),(274,590),(253,581),(238,570)],
- [(459,596),(475,590),(490,592),(505,600),(516,612),(520,624),(511,635),(507,647),(493,650),(479,645),(469,633),(454,622),(449,611)],
- [(536,554),(560,548),(582,545),(605,547),(626,552),(647,558),(667,562),(683,570),(704,575),(725,583),(748,585),(765,592),(781,599),(772,607),(750,607),(732,613),(716,608),(702,600),(685,598),(670,603),(652,597),(635,590),(616,586),(598,581),(579,577),(560,570)],
- [(778,617),(797,613),(813,616),(826,625),(840,630),(855,635),(862,645),(849,651),(833,648),(821,641),(806,639),(791,633)],
- [(848,536),(868,531),(889,534),(906,541),(926,548),(950,550),(968,557),(960,568),(942,569),(925,563),(906,566),(891,558),(874,554),(856,548)]]: d.polygon(s,fill=(40,84,77),outline=(104,152,126))
-for x,y,l in [(140,575,'Cikande'),(378,550,'Antalya'),(248,554,'Brussels'),(292,567,'Dymer'),(308,576,'Benghazi'),(462,565,'Delhi'),(652,620,'Wellington'),(755,560,'Doha'),(837,650,'NYC ×7'),(870,610,'DC'),(720,600,'Gaza'),(938,540,'Tokyo')]: d.ellipse((x-5,y-5,x+5,y+5),fill=GOLD,outline=INK); T(x+8,y-7,l,9,INK,1)
-T(55,650,'Cluster rule: New York is one dot for BTC, stocks, GTA VI, n0n, Pannun, UNSC and Consumer Confidence.',10,MUTED)
-B((34,692,990,798),(23,46,53),(64,133,132)); T(52,706,'BESOK  /  WEDNESDAY 25 NOVEMBER 2026',13,CYAN,1)
-events=['UNSC open debate — New York','UEFA Champions League Matchday 5 — Europe','Falcon 9 USSF-266 — Vandenberg, 15:55 UTC','Progress MS-36 — Baikonur, 05:03 UTC','FIFA U-17 Matchday 2 groups I–L — Doha','Consumer Confidence November — New York, 10:00 ET','White House Turkey Pardon — Washington DC, 14:00 ET']
-for i,e in enumerate(events): x=54+(i%2)*460; y=735+(i//2)*15; d.ellipse((x,y+4,x+6,y+10),fill=GOLD); T(x+14,y,e,10)
-cards=[('COP31','NO DEAL',RED),('NATO','3× KH-101',BLUE),('NEPAL','RAIL + $2bn',GOLD),('INDIA–NZ','DRAW',GREEN),('BTC','~$61.5k FLAT',CYAN),('GAZA','CONTAMINATION',RED),('DYMER','9 DEAD',BLUE),('TRILATERAL','TRUMP–XI–PUTIN',GOLD),('U17 WORLD CUP','MATCHDAY 2',GREEN),('BAHRAIN','ESCALATION',CYAN),('VANUATU','M6.5 DEEP',GOLD),('MERKURY','UKRAINE CLAIMS SUNK',RED)]
+from PIL import Image, ImageDraw, ImageFont
+
+W = H = 1024
+BG = (8, 17, 27); PANEL = (16, 31, 43); INK = (239, 244, 238)
+MUTED = (157, 181, 187); GOLD = (247, 188, 63); CYAN = (76, 211, 201)
+RED = (237, 92, 76); BLUE = (95, 163, 229); GREEN = (125, 202, 142); ORANGE = (244, 139, 68)
+im = Image.new('RGB', (W, H), BG); d = ImageDraw.Draw(im)
+FP = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'; FB = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+def font(n, bold=False): return ImageFont.truetype(FB if bold else FP, n)
+def text(x, y, s, n=12, c=INK, bold=False, anchor=None): d.text((x, y), s, font=font(n, bold), fill=c, anchor=anchor)
+def box(x0, y0, x1, y1, fill=PANEL, outline=(52, 83, 96), r=8, w=2): d.rounded_rectangle((x0,y0,x1,y1), r, fill=fill, outline=outline, width=w)
+def line(points, fill, width=2): d.line(points, fill=fill, width=width)
+
+text(32,18,'THE TUESDAY ATLAS',34,GOLD,True); text(34,59,'24 NOVEMBER 2026  /  HUANG RETURNS TO NVIDIA — CIKANDE: 24 KILLED',13,MUTED,True); text(990,23,'V2',17,CYAN,True,'ra'); line((32,91,992,91),GOLD,3)
+text(34,99,'HUANG RETURNS, NVIDIA ADDS $1 TRILLION, CIKANDE 24 KILLED',14,INK,True); text(990,99,'39 STORIES  •  9 REGIONS',12,CYAN,True,'ra')
+
+box(32,126,632,414,(15,38,55),(64,139,163),10,2); text(51,141,'LEAD / NEW YORK — MON 23 NOV',11,GOLD,True); text(51,162,'HUANG RETURNS TO NVIDIA',29,INK,True); text(51,199,'THE BOARD REINSTATED HIM UNANIMOUSLY',12,CYAN,True); text(51,223,'+31% IN ONE SESSION',20,GOLD,True); text(51,251,'≈$1.1T ADDED TO NVIDIA VALUE',18,INK,True); text(51,280,'Q3 REVENUE  $115.8B  /  +103% YoY',12,MUTED); text(51,300,'NASDAQ +6.5%  •  S&P 500 +4.7%',12,MUTED); text(51,320,'AMD +6.85%  •  TSMC +14.08%  •  GOLD +3.2%',10,MUTED)
+gx,gy,gw,gh=51,350,550,46
+for i in range(1,6): line((gx,gy+i*gh/5,gx+gw,gy+i*gh/5),(35,73,88),1)
+for i in range(1,10): line((gx+i*gw/10,gy,gx+i*gw/10,gy+gh),(28,62,78),1)
+pts=[(gx,gy+39),(gx+46,gy+37),(gx+91,gy+40),(gx+136,gy+31),(gx+186,gy+34),(gx+236,gy+25),(gx+286,gy+29),(gx+337,gy+18),(gx+385,gy+21),(gx+437,gy+9),(gx+492,gy+13),(gx+550,gy-7)]
+line(pts,CYAN,5)
+for x,y in pts[::2]: d.ellipse((x-3,y-3,x+3,y+3),fill=GOLD)
+text(51,400,'NVIDIA  $164.92 CLOSE',11,CYAN,True); text(600,399,'+31.38%',12,GOLD,True,'ra')
+d.rounded_rectangle((472,166,600,274),10,fill=(20,65,82),outline=CYAN,width=2)
+for xx in (487,506,525,544,563,582): line((xx,156,xx,166),CYAN,3); line((xx,274,xx,284),CYAN,3)
+for yy in (180,198,216,234,252): line((462,yy,472,yy),CYAN,3); line((600,yy,610,yy),CYAN,3)
+d.ellipse((493,184,579,256),outline=GOLD,width=3); text(536,220,'N',38,GOLD,True,'mm'); line((441,288,441,207),GOLD,4); line((441,207,430,222),GOLD,4); line((441,207,452,222),GOLD,4)
+
+box(648,126,992,414,(27,40,46),(116,141,141),10,2); text(666,141,'CO-LEAD / SERANG, INDONESIA',11,GOLD,True); text(666,163,'CIKANDE: 24 KILLED',27,INK,True); text(666,199,'SEARCH CONTINUES IN FACTORY RUINS',11,RED,True)
+ix0,iy0,ix1,iy1=666,225,974,362; d.rectangle((ix0,iy0,ix1,iy1),fill=(30,42,49),outline=(107,130,127),width=2); d.rectangle((ix0,314,ix1,iy1),fill=(43,48,48)); roof=[(ix0,270),(690,244),(713,255),(740,238),(768,258),(795,240),(826,256),(851,234),(882,255),(914,241),(ix1,267),(ix1,314),(ix0,314)]; d.polygon(roof,fill=(62,75,73),outline=(120,137,127))
+for x in range(675,960,35): d.rectangle((x,286,x+22,354),fill=(56,63,61),outline=(137,138,123))
+d.polygon([(872,311),(905,289),(974,260),(974,315),(916,322)],fill=(155,130,74)); d.ellipse((931,276,947,292),fill=(250,203,92),outline=(255,228,142))
+for x in (699,845): d.line((x,340,x+55,340),fill=(195,179,137),width=3); d.polygon([(x+8,329),(x+24,321),(x+47,323),(x+55,335),(x+44,343),(x+16,342)],fill=(119,132,126),outline=(209,204,174))
+for x,y in ((774,329),(821,321)):
+ d.ellipse((x-9,y-27,x+9,y-9),fill=(212,166,126)); d.pieslice((x-12,y-34,x+12,y-12),180,360,fill=GOLD); d.polygon([(x-13,y-9),(x+13,y-9),(x+17,y+24),(x-16,y+24)],fill=(209,137,43),outline=(244,200,111)); d.line((x-10,y+23,x-19,y+42),fill=(49,58,61),width=5); d.line((x+9,y+23,x+18,y+42),fill=(49,58,61),width=5)
+text(667,372,'24 body bags recovered; toll confirmed Monday',10,INK,True); text(667,390,'29 safe  •  5 hospitalised  •  unstable structure',10,MUTED)
+
+box(32,428,992,626,(10,41,54),(61,116,129),10,2); text(51,441,'WHERE THE DAY LANDED  /  REAL-LOCATION DOTS',12,CYAN,True); mx,my,mw,mh=51,469,922,126; d.rectangle((mx,my,mx+mw,my+mh),fill=(9,48,63),outline=(57,106,115),width=2)
+for i in range(1,12): line((mx+i*mw/12,my,mx+i*mw/12,my+mh),(24,70,82),1)
+for i in range(1,5): line((mx,my+i*mh/5,mx+mw,my+i*mh/5),(24,70,82),1)
+continents=[[(75,520),(112,495),(168,500),(203,529),(179,550),(140,548),(109,570),(84,551)],[(222,492),(298,486),(380,501),(456,532),(524,544),(587,550),(553,568),(455,559),(381,545),(316,556),(270,539)],[(589,490),(666,484),(731,503),(789,518),(770,540),(714,530),(658,550),(612,535)],[(799,493),(890,500),(952,519),(954,548),(902,544),(856,529),(814,529)]]
+for shape in continents: d.polygon(shape,fill=(42,85,79),outline=(102,150,125))
+marks=[(154,550,'CIKANDE'),(295,505,'BRUSSELS'),(330,522,'DYMER'),(367,514,'BENGHAZI'),(473,511,'DELHI'),(556,523,'DOHA'),(611,545,'NYC ×8'),(682,566,'WELLINGTON'),(727,505,'ANTALYA'),(783,528,'Gaza'),(849,508,'TOKYO'),(913,560,'VANUATU')]
+for x,y,label in marks: d.ellipse((x-4,y-4,x+4,y+4),fill=GOLD,outline=INK); text(x+7,y-7,label,8,INK,True)
+text(53,602,'Nine regions: Southeast Asia  •  East Asia  •  South Asia  •  Middle East  •  Europe  •  Africa  •  North America  •  Oceania  •  Central Asia',9,MUTED)
+
+box(32,637,992,716,(20,47,54),(66,139,137),9,2); text(51,648,'BESOK  /  WEDNESDAY 25 NOVEMBER 2026',12,CYAN,True); events=['UNSC open debate — New York','UEFA Champions League — Europe','Falcon 9 USSF-266 — Vandenberg','Progress MS-36 — Baikonur','FIFA U-17 Groups I–L — Doha','Consumer Confidence — New York','White House Turkey Pardon — DC']
+for i,event in enumerate(events): x=52+(i%2)*458; y=673+(i//2)*12; d.ellipse((x,y+4,x+5,y+9),fill=GOLD); text(x+12,y,event,9,INK)
+
+cards=[('COP31','NO DEAL',RED),('NATO','3× KH-101 CONFIRMED',BLUE),('NEPAL','$2bn + RAIL',GOLD),('INDIA–NZ','DRAW',GREEN),('BTC','SPIKES TO $64.5K',CYAN),('ANTHROPIC','IPO  $83 → ~$86',ORANGE),('GAZA','CONTAMINATION',RED),('DYMER','9 DEAD',BLUE),('TRILATERAL','TRUMP–XI–PUTIN',GOLD),('U17 WORLD CUP','MATCHDAY 2',GREEN),('BAHRAIN','ESCALATION',CYAN),('VANUATU','M6.5 / 598km',GOLD),('MERKURY','SUNK CLAIM',RED),('WAYMO','FREEWAYS PAUSED',ORANGE)]
 def icon(x,y,c,i):
- if i==0:
-  d.ellipse((x+1,y+1,x+17,y+17),outline=c,width=2); d.line((x+9,y+2,x+9,y+16),fill=c,width=1); d.arc((x+3,y+4,x+15,y+14),0,180,fill=c,width=1)
- elif i==1:
-  d.polygon([(x+9,y+1),(x+16,y+4),(x+15,y+12),(x+9,y+17),(x+3,y+12),(x+2,y+4)],outline=c); d.line((x+5,y+8,x+8,y+11),fill=c,width=2); d.line((x+8,y+11,x+13,y+6),fill=c,width=2)
- elif i==2:
-  d.polygon([(x+1,y+16),(x+7,y+6),(x+11,y+12),(x+15,y+4),(x+18,y+16)],outline=c); d.line((x+2,y+17,x+17,y+17),fill=c,width=2)
- elif i==3:
-  d.line((x+5,y+3,x+13,y+15),fill=c,width=3); d.line((x+3,y+3,x+7,y+1),fill=c,width=2); d.ellipse((x+13,y+3,x+17,y+7),outline=c,width=1)
- elif i==4:
-  d.ellipse((x+2,y+1,x+16,y+17),outline=c,width=2); T(x+5,y+1,'B',12,c,1)
- elif i==5:
-  d.polygon([(x+9,y+1),(x+17,y+17),(x+1,y+17)],outline=c); d.line((x+9,y+6,x+9,y+12),fill=c,width=2); d.point((x+9,y+15),fill=c)
- elif i==6:
-  d.rectangle((x+2,y+8,x+16,y+14),outline=c,width=2); d.polygon([(x+5,y+8),(x+8,y+4),(x+13,y+4),(x+16,y+8)],outline=c); d.ellipse((x+4,y+12,x+7,y+16),fill=c); d.ellipse((x+12,y+12,x+15,y+16),fill=c)
- elif i==7:
-  d.polygon([(x+1,y+10),(x+17,y+10),(x+13,y+16),(x+5,y+16)],outline=c); d.line((x+9,y+2,x+9,y+10),fill=c,width=2); d.polygon([(x+10,y+3),(x+16,y+8),(x+10,y+8)],outline=c)
- elif i==8:
-  d.rectangle((x+3,y+5,x+15,y+17),outline=c,width=2); d.polygon([(x+2,y+5),(x+9,y+1),(x+16,y+5)],outline=c); d.rectangle((x+6,y+9,x+8,y+12),outline=c); d.rectangle((x+11,y+9,x+13,y+12),outline=c)
- elif i==9:
-  d.polygon([(x+10,y+1),(x+3,y+10),(x+9,y+10),(x+6,y+17),(x+16,y+7),(x+10,y+7)],outline=c)
- elif i==10:
-  d.line((x+1,y+11,x+5,y+7,x+9,y+13,x+13,y+5,x+17,y+10),fill=c,width=2); d.line((x+2,y+16,x+16,y+16),fill=c,width=1)
- else:
-  d.polygon([(x+1,y+11),(x+17,y+11),(x+13,y+16),(x+5,y+16)],outline=c); d.line((x+9,y+2,x+9,y+11),fill=c,width=2); d.line((x+9,y+3,x+15,y+6),fill=c,width=1)
-for i,(a,b,c) in enumerate(cards):
- x=34+(i%4)*240; y=810+(i//4)*54; B((x,y,x+228,y+52),(18,34,47)); T(x+8,y+6,a,10,c,1); T(x+8,y+22,b,9,INK,1); icon(x+190,y+17,c,i)
-d.line((34,974,990,974),fill=GOLD,width=2); T(38,983,'DATE CHECK  •  TUESDAY 24 NOVEMBER 2026  •  36 DISTINCT THREADS  •  SOURCES LEDGER INCLUDED',10,INK,1); im.save('entry.png',optimize=True)
+ if i==0: d.ellipse((x,y,x+17,y+17),outline=c,width=2); line((x+8,y+1,x+8,y+16),c,1)
+ elif i==1: d.polygon([(x+8,y),(x+17,y+4),(x+15,y+13),(x+8,y+17),(x+2,y+13),(x+1,y+4)],outline=c); line((x+5,y+9,x+8,y+12),c,2); line((x+8,y+12,x+14,y+6),c,2)
+ elif i==2: line([(x,y+16),(x+6,y+6),(x+11,y+12),(x+16,y+3),(x+19,y+16)],c,2)
+ elif i==3: line((x+3,y+2,x+15,y+16),c,3); d.ellipse((x+12,y+2,x+18,y+8),outline=c)
+ elif i==4: d.ellipse((x+1,y,x+17,y+17),outline=c,width=2); text(x+4,y-1,'B',12,c,True)
+ elif i==5: text(x+1,y-2,'A',18,c,True); line((x+2,y+16,x+16,y+16),c,2)
+ elif i==6: d.polygon([(x+9,y),(x+17,y+17),(x+1,y+17)],outline=c); line((x+9,y+6,x+9,y+12),c,2)
+ elif i==7: d.rectangle((x+1,y+7,x+17,y+14),outline=c,width=2); d.ellipse((x+3,y+12,x+7,y+17),fill=c); d.ellipse((x+12,y+12,x+16,y+17),fill=c)
+ elif i==8: d.polygon([(x,y+10),(x+18,y+10),(x+14,y+16),(x+4,y+16)],outline=c); line((x+9,y+2,x+9,y+10),c,2)
+ elif i==9: d.rectangle((x+2,y+5,x+16,y+17),outline=c); d.polygon([(x+1,y+5),(x+9,y),(x+17,y+5)],outline=c)
+ elif i==10: d.polygon([(x+10,y),(x+3,y+10),(x+9,y+10),(x+6,y+17),(x+17,y+6),(x+10,y+6)],outline=c)
+ elif i==11: line([(x,y+11),(x+4,y+7),(x+8,y+13),(x+13,y+4),(x+18,y+10)],c,2)
+ elif i==12: d.polygon([(x,y+11),(x+18,y+11),(x+14,y+16),(x+4,y+16)],outline=c); line((x+9,y+2,x+9,y+11),c,2)
+ else: d.rounded_rectangle((x+1,y+2,x+17,y+15),3,outline=c,width=2); line((x+5,y+16,x+13,y+16),c,2)
+for i,(head,sub,col) in enumerate(cards):
+ x=32+(i%4)*240; y=727+(i//4)*54; box(x,y,x+228,y+48,(16,32,44),(48,75,87),6,1); text(x+9,y+5,head,9,col,True); text(x+9,y+22,sub,8,INK,True); icon(x+195,y+15,col,i)
+text(990,948,'14 ILLUSTRATED CARDS',9,MUTED,True,'ra'); line((32,963,992,963),GOLD,2); text(36,973,'DATE CHECK  •  TUESDAY 24 NOVEMBER 2026  •  39 DISTINCT THREADS  •  9 REGIONS  •  SOURCES LEDGER INCLUDED',9,INK,True)
+im.save('entry.png',optimize=True)
